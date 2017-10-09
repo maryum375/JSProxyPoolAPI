@@ -6,6 +6,7 @@ var logger = require('morgan');
 var router = require('./api/router');
 
 var app = express();
+app.set('case sensitive routing', true);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

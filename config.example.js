@@ -3,5 +3,7 @@
  */
 var config = {};
 
+config.dbConnectionString = "/* Mongodb connection string */";
+config.proxiesCollectionName = "/* Proxies collection name */";
 
 module.exports = config;
