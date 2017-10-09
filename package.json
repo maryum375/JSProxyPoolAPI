@@ -1,19 +1,26 @@
 {
-  "name": "jsproxypoolapi",
-  "version": "0.0.1",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maryum375/JSProxyPoolAPI.git"
-  },
-  "author": "Ran Mariuma",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/maryum375/JSProxyPoolAPI/issues"
-  },
-  "homepage": "https://github.com/maryum375/JSProxyPoolAPI#readme"
+    "name": "jsproxypoolapi",
+    "version": "0.0.1",
+    "description": "",
+    "main": "bin/www",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maryum375/JSProxyPoolAPI.git"
+    },
+    "author": "Ran Mariuma",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/maryum375/JSProxyPoolAPI/issues"
+    },
+    "homepage": "https://github.com/maryum375/JSProxyPoolAPI#readme",
+    "dependencies": {
+        "debug": "~2.6.9",
+        "express": "^4.16.1",
+        "morgan": "^1.9.0",
+        "proxy-pool": "^1.2.2",
+        "serve-favicon": "~2.4.5"
+    }
 }
