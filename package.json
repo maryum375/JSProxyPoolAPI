@@ -1,0 +1,19 @@
+{
+  "name": "jsproxypoolapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryum375/JSProxyPoolAPI.git"
+  },
+  "author": "Ran Mariuma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maryum375/JSProxyPoolAPI/issues"
+  },
+  "homepage": "https://github.com/maryum375/JSProxyPoolAPI#readme"
+}
