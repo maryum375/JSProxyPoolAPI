@@ -12,6 +12,11 @@ app.set('case sensitive routing', true);
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    next();
+});
+
 app.use(router);
 
 // catch 404 and forward to error handler

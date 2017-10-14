@@ -18,9 +18,9 @@
     "homepage": "https://github.com/maryum375/JSProxyPoolAPI#readme",
     "dependencies": {
         "debug": "~2.6.9",
-        "express": "^4.16.1",
+        "express": "^4.16.2",
         "morgan": "^1.9.0",
-        "proxy-pool": "^1.2.2",
+        "proxy-pool": "^1.2.5",
         "serve-favicon": "~2.4.5"
     }
 }
