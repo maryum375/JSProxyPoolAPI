@@ -3,13 +3,15 @@ var Proxy = require("../../modules/proxy");
 
 /* GET proxy listing. */
 var updateProxy = function(req, res, next) {
-    var proxy = new Proxy(req.query.ip, req.query.port);
-    if (req.query._address && req.query._port) {
-        return next("Unable to update _address or _port number of a proxy")
+    if (!req.query.ip || !req.query.port) {
+        return next("Ip address and port must be passed!")
     }
+    var proxy = new Proxy(req.query.ip, req.query.port);
+    delete req.query._address;
+    delete req.query._port;
 
     // updateQuery = buildUpdateQuery(req.query);
-    performProxyUpdating(res, req.query.next);
+    performProxyUpdating(proxy, res, req.query, next);
 };
 
 
@@ -80,7 +82,7 @@ var updateProxy = function(req, res, next) {
 //     }
 // }
 
-let performProxyUpdating = function(res, updateQuery, next) {
+let performProxyUpdating = function(proxy, res, updateQuery, next) {
     proxyPool.updateProxy(proxy, updateQuery, function(err, proxyfromDB) {
         if (err) {
             return next(err);
