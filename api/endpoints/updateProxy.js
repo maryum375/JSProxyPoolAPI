@@ -3,11 +3,11 @@ var Proxy = require("../../modules/proxy");
 
 /* GET proxy listing. */
 var updateProxy = function(req, res, next) {
-    if (!req.query.ip || !req.query.port) {
+    if (!req.query._ip || !req.query._port) {
         return next("Ip address and port must be passed!")
     }
-    var proxy = new Proxy(req.query.ip, req.query.port);
-    delete req.query._address;
+    var proxy = new Proxy(req.query._ip, req.query._port);
+    delete req.query._ip;
     delete req.query._port;
 
     // updateQuery = buildUpdateQuery(req.query);
