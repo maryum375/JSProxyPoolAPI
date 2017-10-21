@@ -31,7 +31,7 @@ app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     // req.app.get('env') === 'development' ? err : {};
 
-    res.send(err)
+    res.send(err.message)
 });
 
 module.exports = app;

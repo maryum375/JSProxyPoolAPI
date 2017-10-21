@@ -5,8 +5,6 @@ const { check } = require('express-validator/check');
 
 /* GET proxy listing. */
 var updateProxy = function(req, res, next) {
-    const errors = validationResult(req);
-    var err = errors.mapped()
     if (!req.query._ip || !req.query._port) {
         return next("Ip address and port must be passed!")
     }
@@ -27,14 +25,9 @@ let performProxyUpdating = function(proxy, res, updateQuery, next) {
     });
 }
 
-let validateProxyExists = function(ipAdress, portNumber) {
-    //TODO Implement
-}
-
 module.exports = [
     check("_ip").isIP(4),
-    check("_port").isNumeric()
-    .custom((portNum, { req }) => validateProxyExists(portNum, req.query._ip)),
+    check("_port").isNumeric(),
     check("_active").isBoolean(),
     validationResultHandler,
     updateProxy
