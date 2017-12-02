@@ -4,9 +4,9 @@ var path = require('path');
 var logger = require('morgan');
 
 var router = require('./api/router');
+var bodyParser = require('body-parser');
 
 var app = express();
-app.set('case sensitive routing', true);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -16,6 +16,9 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*')
     next();
 });
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(router);
 

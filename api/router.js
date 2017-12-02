@@ -9,7 +9,7 @@ var addProxy = require('./endpoints/addProxy');
 /* GET proxy listing. */
 router.route('/getProxy').get(getProxy);
 router.route('/getProxies').get(getproxies);
-router.route('/updateProxy').get(updateProxy);
+router.route('/updateProxy').post(updateProxy);
 router.route('/addProxy').get(addProxy);
 
 module.exports = router;

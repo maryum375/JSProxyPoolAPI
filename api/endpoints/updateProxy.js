@@ -5,15 +5,15 @@ const { check } = require('express-validator/check');
 
 /* GET proxy listing. */
 var updateProxy = function(req, res, next) {
-    if (!req.query._ip || !req.query._port) {
+    if (!req.body._ip || !req.body._port) {
         return next("Ip address and port must be passed!")
     }
-    var proxy = new Proxy(req.query._ip, req.query._port);
-    delete req.query._ip;
-    delete req.query._port;
+    var proxy = new Proxy(req.body._ip, req.body._port);
+    delete req.body._ip;
+    delete req.body._port;
 
     // updateQuery = buildUpdateQuery(req.query);
-    performProxyUpdating(proxy, res, req.query, next);
+    performProxyUpdating(proxy, res, req.body, next);
 };
 
 let performProxyUpdating = function(proxy, res, updateQuery, next) {
